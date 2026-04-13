@@ -1,0 +1,21 @@
+{
+  "name": "proxychecker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"No tests configured\""
+  },
+  "keywords": [],
+  "author": "ismdevx",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "http-proxy-agent": "^9.0.0",
+    "https-proxy-agent": "^9.0.0",
+    "prompts": "^2.4.2",
+    "socks-proxy-agent": "^10.0.0"
+  }
+}

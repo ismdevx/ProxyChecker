@@ -1,0 +1,36 @@
+{
+  "inputFile": "proxies.txt",
+  "outputDir": "Data",
+  "testUrls": [
+    "http://httpbin.org/ip",
+    "https://api.ipify.org?format=json",
+    "http://ifconfig.me/ip",
+    "https://icanhazip.com/"
+  ],
+  "timeoutMs": 3000,
+  "concurrency": 120,
+  "retryCount": 0,
+  "maxTestUrlsPerProxy": 2,
+  "progressEvery": 100,
+  "logEachResult": false,
+  "fastThresholdMs": 800,
+  "maxAliveLatencyMs": 8000,
+  "maxCheckDurationMs": 10000,
+  "heartbeatIntervalMs": 2000,
+  "stallWarnAfterMs": 10000,
+  "proxyTypesMode": "prompt",
+  "selectedProxyTypes": [
+    "http",
+    "https",
+    "socks4",
+    "socks5"
+  ],
+  "tryAllTypesWhenMissingProtocol": true,
+  "protocolsToTryWhenMissing": [
+    "http",
+    "https",
+    "socks4",
+    "socks5"
+  ],
+  "classifyProxyTypes": false
+}
