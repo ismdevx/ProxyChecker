@@ -1,28 +1,28 @@
-# ProxyChecker
+# 🔍 ProxyChecker
 
 A fast, concurrent Node.js proxy checker supporting HTTP, HTTPS, SOCKS4, and SOCKS5. Categorizes results by speed, classifies alive proxies as datacenter, residential, or mobile, and outputs a detailed JSON summary.
 
 ---
 
-## Features
+## ✨ Features
 
-- Supports all major proxy types: `http`, `https`, `socks4`, `socks5`
-- Accepts mixed proxy formats in a single input file
-- Auto-detects and tries all proxy types when no protocol is specified
-- Concurrent checking with configurable concurrency, timeout, and retry
-- Categorizes output per protocol into `alive`, `fast`, `slow`, and `dead`
-- Classifies alive proxies by type — **static** vs **rotating** — and by network: **datacenter**, **residential**, **mobile** (via ip-api.com)
-- Writes a detailed run summary to `Data/summary.json`
+- 🌐 Supports all major proxy types: `http`, `https`, `socks4`, `socks5`
+- 📄 Accepts mixed proxy formats in a single input file
+- 🔎 Auto-detects and tries all proxy types when no protocol is specified
+- ⚡ Concurrent checking with configurable concurrency, timeout, and retry
+- 📂 Categorizes output per protocol into `alive`, `fast`, `slow`, and `dead`
+- 🏷️ Classifies alive proxies by type — **static** vs **rotating** — and by network: **datacenter**, **residential**, **mobile** (via ip-api.com)
+- 📊 Writes a detailed run summary to `Data/summary.json`
 
 ---
 
-## Install
+## 📦 Install
 
 ```bash
 npm install
 ```
 
-## Run
+## 🚀 Run
 
 ```bash
 npm start
@@ -30,7 +30,7 @@ npm start
 
 ---
 
-## Output Structure
+## 📁 Output Structure
 
 ```
 Data/
@@ -48,19 +48,19 @@ Data/
     alive.txt / fast.txt / slow.txt / dead.txt
 ```
 
-**fast.txt** example:
+**⚡ fast.txt** example:
 ```
 http://1.2.3.4:8080 | 312ms
 http://5.6.7.8:3128 | 189ms
 ```
 
-**slow.txt** example:
+**🐢 slow.txt** example:
 ```
 http://1.2.3.4:8080 | 2400ms
 http://5.6.7.8:3128 | 5100ms
 ```
 
-### summary.json example
+### 📋 summary.json example
 
 ```json
 {
@@ -83,7 +83,7 @@ http://5.6.7.8:3128 | 5100ms
 
 ---
 
-## Supported Proxy Formats
+## 📝 Supported Proxy Formats
 
 Mix any of these in `proxies.txt`:
 
@@ -106,30 +106,30 @@ Inline comments with `#` or `;` are supported.
 
 ---
 
-## Configuration
+## ⚙️ Configuration
 
 Edit `config.json` to override defaults:
 
 | Key | Default | Description |
 |-----|---------|-------------|
-| `inputFile` | `proxies.txt` | Path to proxy list |
-| `outputDir` | `Data` | Output directory |
-| `testUrls` | see below | URLs used to validate proxies |
-| `maxTestUrlsPerProxy` | `2` | Max test URLs tried per proxy |
-| `timeoutMs` | `5000` | Request timeout per check (ms) |
-| `maxAliveLatencyMs` | `8000` | Max latency to consider proxy alive |
-| `fastThresholdMs` | `800` | Latency threshold for "fast" category |
-| `concurrency` | `120` | Number of parallel checks |
-| `retryCount` | `0` | Retries before marking dead |
-| `proxyTypesMode` | `all` | `all`, `selected`, or `prompt` |
-| `selectedProxyTypes` | all 4 | Types to check when mode is `selected` |
-| `tryAllTypesWhenMissingProtocol` | `true` | Try all types when no protocol specified |
-| `protocolsToTryWhenMissing` | all 4 | Protocol order when guessing type |
-| `classifyProxyTypes` | `true` | `true` to classify alive proxies via ip-api.com, `false` to skip |
+| `inputFile` | `proxies.txt` | 📄 Path to proxy list |
+| `outputDir` | `Data` | 📁 Output directory |
+| `testUrls` | see below | 🌐 URLs used to validate proxies |
+| `maxTestUrlsPerProxy` | `2` | 🔁 Max test URLs tried per proxy |
+| `timeoutMs` | `5000` | ⏱️ Request timeout per check (ms) |
+| `maxAliveLatencyMs` | `8000` | 📶 Max latency to consider proxy alive |
+| `fastThresholdMs` | `800` | ⚡ Latency threshold for "fast" category |
+| `concurrency` | `120` | 🚦 Number of parallel checks |
+| `retryCount` | `0` | 🔄 Retries before marking dead |
+| `proxyTypesMode` | `all` | 🎛️ `all`, `selected`, or `prompt` |
+| `selectedProxyTypes` | all 4 | ✅ Types to check when mode is `selected` |
+| `tryAllTypesWhenMissingProtocol` | `true` | 🔍 Try all types when no protocol specified |
+| `protocolsToTryWhenMissing` | all 4 | 📋 Protocol order when guessing type |
+| `classifyProxyTypes` | `true` | 🏷️ `true` to classify alive proxies via ip-api.com, `false` to skip |
 
 ---
 
-## Example proxies.txt
+## 💡 Example proxies.txt
 
 ```
 http://127.0.0.1:8080
@@ -142,7 +142,7 @@ myUser:myPass:10.0.0.6:1080
 
 ---
 
-## Credits
+## 💙 Credits
 
 Built by **[ismdevx](https://github.com/ismdevx)**
 
